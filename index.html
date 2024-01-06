@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Books Gallery</title>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Electronics And Communication Engineering</h1>
+    <div id="bookList" class="book-list"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const booksData = [
+ {
+  title: 'Higher Engineering Mathematics',
+  author: 'B. S. Grewal',
+  year: 2017,
+  quantity: 47,
+  imageUrl: './img/1.jpg'
+ },
+ {
+  title: '“Computer System Architecture',
+  author: 'M. Morris Mano',
+  year: 1996,
+  quantity: 7,
+  imageUrl: './img/2.jpg'
+ },
+ {
+  title: 'Digital Design',
+  author: 'M. Morris Mano and Michael',
+  year: 2001,
+  quantity: 9,
+  imageUrl: './img/3.jpg'
+ },
+ {
+  title: 'Modern Digital Electronics',
+  author: 'R.P Jain',
+  year: 2003,
+  quantity: 7,
+  imageUrl: './img/4.jpg'
+ },
+ {
+  title: 'signals and systems',
+  author: 'S.Haykin and B.V Veen,',
+  quantity: 8,
+  imageUrl: './img/5.jpg'
+ },
+ {
+  title: '“Probability, Random Variables & Random Signal Principles',
+  author: 'Peyton Z. Peebles',
+  year: 2001,
+  quantity: 11,
+  imageUrl: './img/6.jpg'
+ },
+ {
+  title: 'Probability, Random Variables and Stochastic',
+  author: 'Athanasios Papoulis and S. Unnikrishna Pillai,',
+  year: 2002,
+  quantity: 7,
+  imageUrl: './img/7.jpg'
+ },
+ {
+  title: 'Integrated Electronics',
+  author: 'Jacob Millman, Christos Halkias',
+  year: 2009,
+  quantity: 10,
+  imageUrl: './img/8.jpg'
+ },
+ {
+  title: 'Pulse Digital & Switching Waveforms',
+  author: 'Jacob Millman& Herbert Taub',
+  quantity: 10,
+  imageUrl: './img/9.jpg'
+ },
+ {
+  title: 'Higher Engineering Mathematics”',
+  author: 'B. S. Grewal',
+  year: 2017,
+  quantity: 46,
+  imageUrl: './img/10.jpg'
+ },
+ {
+  title: 'Control Systems Engineering”',
+  author: '. I.J. Nagrath& M.Gopal',
+  quantity: 13,
+  imageUrl: './img/11.jpg'
+ },
+ {
+  title: 'Automatic Control Systems',
+  author: 'Benjamin C. Kuo',
+  quantity: 6,
+  imageUrl: './img/12.jpg'
+ },
+ {
+  title: 'Integrated Electronics',
+  author: 'Jacob Millman, Christos Halkia',
+  year: 2009,
+  quantity: 10,
+  imageUrl: './img/13.jpg'
+ },
+ {
+  title: '“Electronic Circuit Analysis and Design',
+  author: 'Donald A. Neamon',
+  quantity: 8,
+  imageUrl: './img/14.jpg'
+ },
+ {
+  title: '“Communication Systems',
+  author: 'Simon Haykins',
+  year: 2009,
+  quantity: 9,
+  imageUrl: './img/15.jpg'
+ },
+ {
+  title: '“Analog Communication Systems',
+  author: 'Sanjay Sharma',
+  quantity: 8,
+  imageUrl: './img/16.jpg'
+ },
+ {
+  title: '“ Principles of Electromagnetic”',
+  author: 'M.N.O. Sadiku',
+  year: 2007,
+  quantity: 15,
+  imageUrl: './img/17.jpg'
+ },
+ {
+  title: 'Electromagnetic Field Theory and Transmission Lines',
+  author: 'G. Sasi Bhushana Rao',
+  year: 2012,
+  quantity: 7,
+  imageUrl: './img/18.jpg'
+ },
+ {
+  title: 'Architecture Programming and Applications,',
+  author: 'Ramesh S. Gaonkar',
+  quantity: 9,
+  imageUrl: './img/19.jpg'
+ },
+ {
+  title: 'The 8051 Microcontroller and Embedded Systems',
+  author: 'Muhammed Ali Mazidi, Janice GillispieMazidi',
+  year: 2008,
+  quantity: 11,
+  imageUrl: './img/20.jpg'
+ },
+ {
+  title: 'The 8051 Microcontroller & Embedded Systems Using Assembly and C',
+  author: 'Kenneth. J. Ayala, DhananjayV. Gadre',
+  year: 2010,
+  quantity: 10,
+  imageUrl: './img/20.jpg'
+ },
+ {
+  title: '“modern Electronic Instrumentation and Measurement Techniques',
+  author: 'A.D.Helfrick and W.D.Cooper',
+  year: 2002,
+  quantity: 6,
+  imageUrl: './img/21.jpg'
+ },
+ {
+  title: 'Electrical and Electronic Measurements and Instrumentation',
+  author: 'A.K.Sawhney',
+  year: 2002,
+  quantity: 5,
+  imageUrl: './img/22.jpg'
+ },
+ {
+  title: ' Microelectronic circuits',
+  author: '1.Adel S.Sedra, Kenneth C.Smith',
+  year: 2009,
+  quantity: 4,
+  imageUrl: './img/23.jpg'
+ },
+ {
+  title: 'Integated Electronics Analog and Digital Circuits ans Systems',
+  author: 'Jacob Millman, Christos C. Halkias',
+  year: 1972,
+  quantity: 7,
+  imageUrl: './img/24.jpg'
+ },
+ {
+  title: '“Principles of Communication Systems',
+  author: 'H.Taub and D.Schilling',
+  year: 2003,
+  quantity: 11,
+  imageUrl: './img/25.jpg'
+ },
+ {
+  title: 'Digital Communications',
+  author: '. P.Ramakrishna rao',
+  year: 2011,
+  quantity: 13,
+  imageUrl: './img/26.jpg'
+ },
+ {
+  title: 'EMBEDDED SYSTEMS AND IOT',
+  author: 'Frank Vahid, Tony Givargis',
+  quantity: 16,
+  imageUrl: './img/27.jpg'
+ },
+ {
+  title: 'INTERNET OF THINGS Architecture and Design Principles,',
+  author: 'Raj Kamal',
+  year: 2017,
+  quantity: 19,
+  imageUrl: './img/28.jpg'
+ },
+ {
+  title: 'OP-AMP and Linear ICs',
+  author: 'Ramakant A. Gayakwad',
+  year: 2001,
+  quantity: 5,
+  imageUrl: './img/29.jpg'
+ },
+ {
+  title: 'Design with Operational Amplifiers and Analog Integrated Circuits',
+  author: 'Sergio Franco',
+  year: 2007,
+  quantity: 7,
+  imageUrl: './img/30.jpg'
+ },
+ {
+  title: 'Antenna Theory',
+  author: 'C.A. Balanis',
+  year: 2005,
+  quantity: 8,
+  imageUrl: './img/31.jpg'
+ },
+ {
+  title: 'Antennas and Wave Propagation',
+  author: 'G.S.N. Raju',
+  year: 2007,
+  quantity: 9,
+  imageUrl: './img/32.jpg'
+ },
+ {
+  title: 'Design through Verilog HDL',
+  author: 'T.R. Padmanabhan and B. Bala Tripura Sundari',
+  year: 2004,
+  imageUrl: './img/33.jpg'
+ },
+ {
+  title: 'Biomedical Instrumentation and Measurements',
+  author: 'Leslie Cromwell, Fred J Weibell and Erich A Pfeiffer',
+  year: 2003,
+  quantity: 11,
+  imageUrl: './img/34.jpg'
+ },
+ {
+  title: 'Hand Book of Biomedical Instrumentation',
+  author: 'Khandpur R.S',
+  year: 2003,
+  quantity: 4,
+  imageUrl: './img/35.jpg'
+ },
+ {
+  title: 'Communication Systems',
+  author: 'A.B. Carlson, Mc. Graw Hill Publishers',
+  quantity: 13,
+  imageUrl: './img/36.jpg'
+ },
+ {
+  title: 'Digital Communications',
+  author: ' Simon Haykin , John Wiley & Sons',
+  quantity: 7,
+  imageUrl: './img/37.jpg'
+ },
+ {
+  title: 'Protocols And Architectures for Wireless Sensor Networks',
+  author: 'Holger Karl & Andreas Willig',
+  year: 2005,
+  quantity: 9,
+  imageUrl: './img/38.jpg'
+ },
+ {
+  title: 'Design of Analog CMOS Integrated Circuits',
+  author: 'Behzad Razavi',
+  year: 2002,
+  quantity: 9,
+  imageUrl: './img/39.jpg'
+ },
+ {
+  title: 'VLSI Design Techniques for Analog and Digital Circuits',
+  author: 'Randall Geiger, Phillip Allen, Noel Strader,',
+  year: 2010,
+  quantity: 11,
+  imageUrl: './img/40.jpg'
+ },
+ {
+  title: 'Data Structures using C and C++”',
+  author: 'Y. Langsam, M. Augenstin and A. Tannenbaum',
+  year: 1995,
+  quantity: 12,
+  imageUrl: './img/41.jpg'
+ },
+ {
+  title: 'Data Structures and Algorithm Analysis in C',
+  author: 'Mark Allen Weiss',
+  quantity: 10,
+  imageUrl: './img/42.jpg'
+ },
+ {
+  title: 'Digital Signal Processing, Principles, Algorithms, and Applications',
+  author: 'John G. Proakis, Dimitris G.Manolakis,',
+  year: 2007,
+  imageUrl: './img/43.jpg'
+ },
+ {
+  title: 'Digital Signal Processors – Architecture, Programming and Applications',
+  author: 'B.Venkataramani, M.Bhaskar',
+  year: 2002,
+  imageUrl: './img/44.jpg'
+ },
+ {
+  title: 'Basic VLSI Design',
+  author: 'Douglas A, Pucknell, Kamran Eshraghian',
+  imageUrl: './img/45.jpg'
+ },
+ {
+  title: 'Principles of CMOS VLSI Design”',
+  author: 'Weste and Eshraghian',
+  year: 1999,
+  quantity: 12,
+  imageUrl: './img/46.jpg'
+ },
+ {
+  title: 'Managerial Economics and Financial Analysis',
+  author: 'A.R. AryaSri',
+  year: 2014,
+  imageUrl: './img/47.jpg'
+ },
+ {
+  title: 'Industrial Organization & Engineering Economics',
+  author: 'S.C. Sharma and Banga T. R',
+  year: 2006,
+  imageUrl: './img/48.jpg'
+ },
+ {
+  title: 'Wireless & Cellular Telecommunications',
+  author: 'William C.Y.Lee',
+  quantity: 20,
+  imageUrl: './img/49.jpg'
+ },
+ {
+  title: 'Wireless communications Principles and Practice',
+  author: 'Theodore S.Rappaport',
+  quantity: 17,
+  imageUrl: './img/50.jpg'
+ },
+ {
+  title: 'DataandComputerCommunication',
+  author: 'WilliamStallings',
+  year: 2000,
+  quantity: 14,
+  imageUrl: './img/51.jpg'
+ },
+ {
+  title: 'Computer Networks”',
+  author: 'Andrew S.Tanenbaum',
+  year: 2003,
+  quantity: 6,
+  imageUrl: './img/52.jpg'
+ },
+ {
+  title: 'Satellite Communication',
+  author: 'T. Pratt and C.W. Boastian',
+  year: 2002,
+  imageUrl: './img/53.jpg'
+ },
+ {
+  title: 'Global Navigation Satellite Systems',
+  author: 'G S RAO,',
+  year: 2010,
+  quantity: 6,
+  imageUrl: './img/54.jpg'
+ },
+ {
+  title: 'Digital Processing of Speech Signals',
+  author: 'L.R. Rabiner and R.E Schafer,',
+  year: 2008,
+  imageUrl: './img/55.jpg'
+ },
+ {
+  title: 'Digital Image Processing',
+  author: 'TRafael C Gonzalez, Richard E Woods',
+  year: 2004,
+  quantity: 19,
+  imageUrl: './img/56.jpg'
+ },
+ {
+  title: 'LowpowerCMOSVLSIcircuitdesign',
+  author: '.Kaushik Roy, S.C.Prasad',
+  year: 2000,
+  quantity: 10,
+  imageUrl: './img/57.jpg'
+ },
+ {
+  title: 'Low power digital CMOS design',
+  author: '.A.P. Chandrasekaran, R.W. Broadersen',
+  year: 1995,
+  quantity: 13,
+  imageUrl: './img/58.jpg'
+ },
+ {
+  title: 'Microwave& Radar Engineering',
+  author: 'M. Kulakarni',
+  year: 2014,
+  quantity: 19,
+  imageUrl: './img/59.jpg'
+ },
+ {
+  title: 'Introduction to Radar Systems',
+  author: '. M.I. Skolnik',
+  year: 2007,
+  quantity: 10,
+  imageUrl: './img/60.jpg'
+ }
+]
+        // Add more book entries as needed
+
+      const bookList = document.getElementById('bookList');
+
+      // Populate the book gallery using the provided data
+      booksData.forEach(book => {
+        const bookElement = document.createElement('div');
+        bookElement.classList.add('book');
+
+        const imageElement = document.createElement('img');
+        imageElement.src = book.imageUrl;
+        imageElement.alt = `${book.title} by ${book.author}`;
+
+        const infoElement = document.createElement('div');
+        infoElement.classList.add('book-info');
+        infoElement.innerHTML = `<h3>${book.title}</h3><p>${book.author}</p><p>Published: ${book.year}</p><p>Quantity: ${book.quantity}</p>`;
+
+        bookElement.appendChild(imageElement);
+        bookElement.appendChild(infoElement);
+
+        bookList.appendChild(bookElement);
+      });
+    });
+  </script>
+</body>
+</html>
